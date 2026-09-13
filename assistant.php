@@ -15,30 +15,39 @@
         rel="stylesheet">
     <style>
     :root {
-        --bg: #f4f7f5;
+        --bg: #f6f9f6;
         --surface: #ffffff;
         --ink: #0f1f17;
         --ink-soft: #4a5b52;
-        --muted: #82928a;
-        --line: #e2ede5;
+        --muted: #7a8a82;
+        --line: #e6ede7;
         --brand: #1f7a4d;
         --brand-600: #176b41;
         --brand-700: #125936;
-        --brand-50: #eef7f2;
+        --brand-50: #e8f5ee;
         --leaf: #3aa66a;
         --accent: #e8a13a;
-        --accent-50: #fdf6ec;
+        --accent-600: #d68f2a;
+        --accent-50: #fdf3e2;
+        --sky: #2f7bd1;
+        --sky-50: #e8f1fb;
+
+        /* Orb spectrum — the assistant's signature glow */
+        --orb-1: #7c6cf6;
+        --orb-2: #e06bd6;
+        --orb-3: #4fd1e0;
+        --orb-4: #5b7cff;
 
         /* Message Colors */
         --user-bg: #1f7a4d;
         --user-text: #ffffff;
         --ai-bg: #ffffff;
         --ai-text: #0f1f17;
-        --ai-border: #d0e0d5;
+        --ai-border: #e6ede7;
 
-        --shadow-sm: 0 2px 4px rgba(15, 31, 23, .04);
-        --shadow-md: 0 6px 20px rgba(15, 31, 23, .06);
-        --shadow-lg: 0 16px 40px -10px rgba(15, 31, 23, .12);
+        --shadow-sm: 0 1px 2px rgba(15, 31, 23, .06), 0 1px 3px rgba(15, 31, 23, .04);
+        --shadow-md: 0 4px 16px rgba(15, 31, 23, .08);
+        --shadow-lg: 0 18px 50px -12px rgba(15, 31, 23, .22);
         --radius: 14px;
         --radius-lg: 20px;
         --maxw: 1180px;
@@ -63,6 +72,7 @@
         min-height: 100vh;
         display: flex;
         flex-direction: column;
+        position: relative;
     }
 
     h1,
@@ -92,7 +102,7 @@
         position: sticky;
         top: 0;
         z-index: 50;
-        background: rgba(255, 255, 255, .88);
+        background: rgba(255, 255, 255, .82);
         backdrop-filter: saturate(180%) blur(14px);
         -webkit-backdrop-filter: saturate(180%) blur(14px);
         border-bottom: 1px solid var(--line);
@@ -124,7 +134,7 @@
         display: grid;
         place-items: center;
         color: #fff;
-        box-shadow: 0 6px 16px -4px rgba(31, 122, 77, .4);
+        box-shadow: 0 6px 16px -4px rgba(31, 122, 77, .5);
     }
 
     .brand-mark svg {
@@ -202,24 +212,14 @@
         margin-bottom: 20px;
         display: flex;
         align-items: center;
-        gap: 16px;
+        gap: 18px;
     }
 
     .page-head .ico {
-        width: 52px;
-        height: 52px;
-        border-radius: 14px;
+        width: 56px;
+        height: 56px;
+        border-radius: 50%;
         flex: 0 0 auto;
-        background: linear-gradient(135deg, var(--brand), var(--leaf));
-        display: grid;
-        place-items: center;
-        color: #fff;
-        box-shadow: 0 8px 20px -5px rgba(31, 122, 77, .45);
-    }
-
-    .page-head .ico svg {
-        width: 26px;
-        height: 26px;
     }
 
     .page-head h1 {
@@ -230,6 +230,68 @@
     .page-head p {
         color: var(--ink-soft);
         font-size: .95rem;
+    }
+
+    /* ===== AI ORB — the assistant's living signature ===== */
+    .ico,
+    .avatar-ai,
+    .msg.ai .avatar {
+        display: inline-block;
+        position: relative;
+        overflow: hidden;
+        border-radius: 50%;
+        background: #eef2f7;
+        isolation: isolate;
+        box-shadow:
+            0 0 0 1px rgba(15, 31, 23, .06) inset,
+            0 6px 20px -4px rgba(124, 108, 246, .4),
+            0 0 20px -6px rgba(79, 209, 224, .35);
+    }
+
+    .ico svg,
+    .avatar-ai svg,
+    .msg.ai .avatar svg {
+        display: none;
+    }
+
+    .ico::before,
+    .avatar-ai::before,
+    .msg.ai .avatar::before {
+        content: "";
+        position: absolute;
+        inset: -40%;
+        background: conic-gradient(from 0deg,
+                var(--orb-1), var(--orb-2), var(--orb-3), var(--orb-4), var(--orb-1));
+        filter: blur(4px) saturate(135%);
+        animation: orbSpin 7s linear infinite;
+    }
+
+    .ico::after,
+    .avatar-ai::after,
+    .msg.ai .avatar::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        border-radius: inherit;
+        background:
+            radial-gradient(circle at 32% 26%, rgba(255, 255, 255, .75), transparent 42%),
+            radial-gradient(circle at 72% 78%, rgba(0, 0, 0, .45), transparent 55%);
+        mix-blend-mode: overlay;
+    }
+
+    @keyframes orbSpin {
+        to {
+            transform: rotate(360deg);
+        }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+
+        .ico::before,
+        .avatar-ai::before,
+        .msg.ai .avatar::before {
+            animation: none;
+        }
     }
 
     /* ===== CHAT SHELL ===== */
@@ -243,6 +305,7 @@
         flex-direction: column;
         height: calc(100vh - 215px);
         min-height: 520px;
+        position: relative;
     }
 
     /* TOOLBAR HEADER */
@@ -265,18 +328,7 @@
     .chat-toolbar-title .avatar-ai {
         width: 40px;
         height: 40px;
-        border-radius: 12px;
         flex: 0 0 auto;
-        background: linear-gradient(135deg, var(--brand), var(--leaf));
-        display: grid;
-        place-items: center;
-        color: #fff;
-        box-shadow: 0 4px 12px -2px rgba(31, 122, 77, .4);
-    }
-
-    .chat-toolbar-title .avatar-ai svg {
-        width: 20px;
-        height: 20px;
     }
 
     .chat-toolbar-title strong {
@@ -403,9 +455,9 @@
     }
 
     .btn-outline.danger:hover {
-        border-color: #e55353;
-        color: #e55353;
-        background: #fdf2f2;
+        border-color: #e02424;
+        color: #e02424;
+        background: #fde8e8;
     }
 
     /* ===== CHAT LOG STREAM & BUBBLES ===== */
@@ -422,7 +474,7 @@
 
     .chat-log:empty::before {
         content: "Ask AgriSeed AI any question about your crops, soil, or farming techniques.";
-        color: var(--muted);
+        color: var(--ink-soft);
         font-size: .92rem;
         text-align: center;
         margin: auto;
@@ -496,12 +548,6 @@
         flex-direction: row;
     }
 
-    .msg.ai .avatar {
-        background: linear-gradient(135deg, var(--brand), var(--leaf));
-        color: #ffffff;
-        box-shadow: 0 4px 12px -2px rgba(31, 122, 77, 0.35);
-    }
-
     .msg.ai .bubble {
         background: var(--surface);
         color: var(--ink);
@@ -521,11 +567,11 @@
     }
 
     .msg.user .bubble {
-        background: var(--brand);
+        background: linear-gradient(135deg, var(--brand), var(--brand-600));
         color: #ffffff;
         border: 1px solid var(--brand-600);
         border-bottom-right-radius: 4px;
-        box-shadow: 0 4px 14px -3px rgba(31, 122, 77, 0.35);
+        box-shadow: 0 4px 14px -3px rgba(31, 122, 77, .35);
     }
 
     .msg.user .bubble .meta {
@@ -762,12 +808,7 @@
 
     <main class="container">
         <div class="page-head">
-            <span class="ico">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                    stroke-linejoin="round">
-                    <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
-                </svg>
-            </span>
+            <span class="ico" aria-hidden="true"></span>
             <div>
                 <h1>AI Agriculture Assistant</h1>
                 <p>Ask about pests, soil, watering, or what to plant — in English or Kinyarwanda.</p>
@@ -777,17 +818,7 @@
         <div class="chat-shell">
             <div class="chat-toolbar">
                 <div class="chat-toolbar-title">
-                    <span class="avatar-ai">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                            stroke-linecap="round" stroke-linejoin="round">
-                            <path d="M12 8V4H8" />
-                            <rect width="16" height="12" x="4" y="8" rx="2" />
-                            <path d="M2 14h2" />
-                            <path d="M20 14h2" />
-                            <path d="M15 13v2" />
-                            <path d="M9 13v2" />
-                        </svg>
-                    </span>
+                    <span class="avatar-ai" aria-hidden="true"></span>
                     <div>
                         <strong>AgriSeed AI <span class="status">Online</span></strong>
                         <div class="card-muted">Agricultural Expert System</div>
