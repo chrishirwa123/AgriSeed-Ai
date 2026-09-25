@@ -7,10 +7,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dashboard — AgriSeed AI</title>
+    <title>Dashboard</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
     <style>
     :root {
@@ -56,7 +58,10 @@
         -webkit-font-smoothing: antialiased;
     }
 
-    h1, h2, h3, h4 {
+    h1,
+    h2,
+    h3,
+    h4 {
         font-family: 'Plus Jakarta Sans', sans-serif;
         line-height: 1.2;
         letter-spacing: -.02em;
@@ -502,7 +507,8 @@
             justify-content: center;
         }
 
-        .grid-2, .grid-3 {
+        .grid-2,
+        .grid-3 {
             grid-template-columns: 1fr;
         }
 
@@ -519,7 +525,8 @@
         <div class="container">
             <a href="index.php" class="brand">
                 <span class="brand-mark">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
                         <path d="M11 20A7 7 0 0 1 4 13c0-2 .5-5 4-7 2 2 4 4 4 7" />
                         <path d="M20 8c-3 0-5 1-6 3" />
                         <path d="M11 20c0-5 1-8 6-12 1 3 1 7-2 9" />
@@ -529,31 +536,37 @@
             </a>
             <button class="nav-toggle" aria-label="Toggle navigation">☰</button>
             <ul class="nav-links">
-                <li><a href="index.php"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <li><a href="index.php"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                            stroke-linecap="round" stroke-linejoin="round">
                             <path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
                             <polyline points="9 22 9 12 15 12 15 22" />
                         </svg> Home</a></li>
-                <li><a href="assistant.php"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <li><a href="assistant.php"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                            stroke-linecap="round" stroke-linejoin="round">
                             <rect x="4" y="7" width="16" height="12" rx="2" />
                             <circle cx="9" cy="13" r="1" />
                             <circle cx="15" cy="13" r="1" />
                             <path d="M12 7V4M9 4h6" />
                         </svg> AI Assistant</a></li>
-                <li><a href="crop-advisor.php"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <li><a href="crop-advisor.php"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                             <path d="M12 2v6" />
                             <path d="M5.5 8 12 14" />
                             <path d="M18.5 8 12 14" />
                             <path d="M12 22V14" />
                         </svg> Crop Advisor</a></li>
-                <li><a href="plant-doctor.php"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <li><a href="plant-doctor.php"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                             <path d="M19 14c1.5-1.5 3-3.5 3-6a4 4 0 0 0-8 0c0 2.5 1.5 4.5 3 6" />
                             <path d="M5 14c1.5-1.5 3-3.5 3-6a4 4 0 0 0-8 0c0 2.5 1.5 4.5 3 6" />
                             <path d="M12 22V12" />
                         </svg> Plant Doctor</a></li>
-                <li><a href="irrigation.php"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <li><a href="irrigation.php"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                            stroke-linecap="round" stroke-linejoin="round">
                             <path d="M12 22a7 7 0 0 0 7-7c0-4-7-13-7-13S5 11 5 15a7 7 0 0 0 7 7z" />
                         </svg> Irrigation</a></li>
-                <li><a href="dashboard.php" class="nav-cta"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <li><a href="dashboard.php" class="nav-cta"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                             <rect x="3" y="3" width="7" height="9" rx="1" />
                             <rect x="14" y="3" width="7" height="5" rx="1" />
                             <rect x="14" y="12" width="7" height="9" rx="1" />
@@ -579,7 +592,8 @@
         <div class="grid grid-2">
             <div class="card" id="locationWidget">
                 <h3>
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
                         <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0" />
                         <circle cx="12" cy="10" r="3" />
                     </svg> Location
@@ -590,7 +604,8 @@
                     </div>
                     <div style="display:flex; gap:0.5rem; flex-wrap: wrap;">
                         <button class="btn btn-primary btn-sm" id="useLocationBtn">Use My Location</button>
-                        <button class="btn btn-outline btn-sm" id="manualLocationToggle" type="button">Enter Manually</button>
+                        <button class="btn btn-outline btn-sm" id="manualLocationToggle" type="button">Enter
+                            Manually</button>
                     </div>
                 </div>
                 <p class="field-hint" id="locationStatus"></p>
@@ -598,7 +613,8 @@
                     <div class="grid grid-3">
                         <div class="field"><label>City/Town</label><input type="text" name="manualCity"></div>
                         <div class="field"><label>District</label><input type="text" name="manualDistrict"></div>
-                        <div class="field"><label>Country</label><input type="text" name="manualCountry" value="Rwanda"></div>
+                        <div class="field"><label>Country</label><input type="text" name="manualCountry" value="Rwanda">
+                        </div>
                     </div>
                     <button class="btn btn-primary btn-sm" type="submit" style="margin-top:8px;">Save Location</button>
                 </form>
@@ -606,9 +622,11 @@
 
             <div class="card" id="weatherCard">
                 <h3>
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
                         <circle cx="12" cy="12" r="4" />
-                        <path d="M12 2v2M12 20v2M2 12h2M20 12h2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4" />
+                        <path
+                            d="M12 2v2M12 20v2M2 12h2M20 12h2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4" />
                     </svg> Weather
                 </h3>
                 <p class="card-muted">Set your location to see current weather.</p>
@@ -618,7 +636,8 @@
         <div class="action-grid">
             <a href="assistant.php" class="action-card">
                 <div class="ico-box">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
                         <rect x="4" y="7" width="16" height="12" rx="2" />
                         <circle cx="9" cy="13" r="1" />
                         <circle cx="15" cy="13" r="1" />
@@ -630,7 +649,8 @@
             </a>
             <a href="crop-advisor.php" class="action-card">
                 <div class="ico-box">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
                         <path d="M12 2v6" />
                         <path d="M5.5 8 12 14" />
                         <path d="M18.5 8 12 14" />
@@ -642,7 +662,8 @@
             </a>
             <a href="plant-doctor.php" class="action-card">
                 <div class="ico-box">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
                         <path d="M19 14c1.5-1.5 3-3.5 3-6a4 4 0 0 0-8 0c0 2.5 1.5 4.5 3 6" />
                         <path d="M5 14c1.5-1.5 3-3.5 3-6a4 4 0 0 0-8 0c0 2.5 1.5 4.5 3 6" />
                         <path d="M12 22V12" />
@@ -653,7 +674,8 @@
             </a>
             <a href="irrigation.php" class="action-card">
                 <div class="ico-box">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
                         <path d="M12 22a7 7 0 0 0 7-7c0-4-7-13-7-13S5 11 5 15a7 7 0 0 0 7 7z" />
                     </svg>
                 </div>
@@ -664,7 +686,8 @@
 
         <div class="card">
             <h3>
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                    stroke-linejoin="round">
                     <circle cx="12" cy="12" r="10" />
                     <polyline points="12 6 12 12 16 14" />
                 </svg> Recent Activity
@@ -677,7 +700,8 @@
     <footer class="site-footer">
         <div class="container">
             <span class="foot-brand">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                    stroke-linejoin="round">
                     <path d="M11 20A7 7 0 0 1 4 13c0-2 .5-5 4-7 2 2 4 4 4 7" />
                     <path d="M20 8c-3 0-5 1-6 3" />
                 </svg>
@@ -705,7 +729,8 @@
             form = document.getElementById('manualLocationForm');
         if (btn && form) {
             btn.addEventListener('click', function() {
-                form.style.display = (form.style.display === 'none' || form.style.display === '') ? 'flex' : 'none';
+                form.style.display = (form.style.display === 'none' || form.style.display === '') ? 'flex' :
+                    'none';
             });
         }
 
